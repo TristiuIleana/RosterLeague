@@ -64,4 +64,8 @@ public interface Request {
     void removeTeam(String teamId);
 
     void clearAllEntities();
+
+    void setupTournamentData();
+
+    String playTournament(String leagueId, String nextLeagueId);
 }

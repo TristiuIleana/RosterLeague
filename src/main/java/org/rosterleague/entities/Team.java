@@ -83,7 +83,7 @@ public class Team implements Serializable {
     public void addPoints(int points) {
         this.points += points;
     }
-    public void resetPoints(int points) {
+    public void resetPoints() {
         this.points = 0;
     }
     @ManyToMany
