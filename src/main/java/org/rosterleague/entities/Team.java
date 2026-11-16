@@ -29,11 +29,21 @@ import jakarta.persistence.Table;
 public class Team implements Serializable {
     @Serial
     private static final long serialVersionUID = 4797864229333271809L;
+
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
+    }
+
     private String id;
     private String name;
     private String city;
     private Collection<Player> players;
     private League league;
+    private int points;
     
     /** Creates a new instance of Team */
     public Team() {
@@ -43,6 +53,7 @@ public class Team implements Serializable {
         this.id = id;
         this.name = name;
         this.city = city;
+        this.points = 0;
     }
 
     @Id
@@ -69,7 +80,12 @@ public class Team implements Serializable {
     public void setCity(String city) {
         this.city = city;
     }
-
+    public void addPoints(int points) {
+        this.points += points;
+    }
+    public void resetPoints(int points) {
+        this.points = 0;
+    }
     @ManyToMany
     @JoinTable(
         name="PERSISTENCE_ROSTER_TEAM_PLAYER",
