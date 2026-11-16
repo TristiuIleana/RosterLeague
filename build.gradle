@@ -5,7 +5,6 @@ plugins {
 
 group 'org.rosterleague'
 version '1.0-SNAPSHOT'
-
 repositories {
     mavenCentral()
 }
@@ -13,9 +12,6 @@ repositories {
 ext {
     junitVersion = '5.10.2'
 }
-
-sourceCompatibility = '21'
-targetCompatibility = '21'
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
