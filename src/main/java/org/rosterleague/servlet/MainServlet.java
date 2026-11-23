@@ -28,6 +28,24 @@ public class MainServlet extends HttpServlet {
         getSomeInfo();
         getMoreInfo();
         removeInfo();
+
+        runTournaments();
+    }
+
+    private void runTournaments() {
+        try {
+            ejbRequest.clearAllEntities();
+            ejbRequest.setupTournamentData();
+
+            printer.println("7.9.3 TOURNAMENTS SIMULATION");
+
+            printer.println(ejbRequest.playTournament("CL", "USC"));
+            printer.println(ejbRequest.playTournament("USC", "FIC"));
+            printer.println(ejbRequest.playTournament("FIC", null));
+        } catch (Exception ex) {
+            printer.println("Caught an exception: " + ex.getClass() + " : " + ex.getMessage());
+            ex.printStackTrace(printer);
+        }
     }
 
     private void insertInfo() {

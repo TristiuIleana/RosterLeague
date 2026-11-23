@@ -13,6 +13,7 @@ package org.rosterleague.entities;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 
 import jakarta.persistence.Entity;
@@ -47,6 +48,7 @@ public class Team implements Serializable {
     
     /** Creates a new instance of Team */
     public Team() {
+        this.players = new ArrayList<>();
     }
     
     public Team(String id, String name, String city) {
@@ -54,6 +56,7 @@ public class Team implements Serializable {
         this.name = name;
         this.city = city;
         this.points = 0;
+        this.players = new ArrayList<>();
     }
 
     @Id
